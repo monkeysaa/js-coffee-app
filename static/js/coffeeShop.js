@@ -34,6 +34,13 @@ const setProgressAndStatus = (progressVal, statusMsg) => {
   $('#order-status-message').html(statusMsg);
 };
 
+// Add to Cart
+// // jQuery for reference
+// $('.add-to-order').on('click', () => {
+//   addItemToCart('Coffee');
+//   incrementCartTotal(1.50);
+//   }
+// );
 
 document.querySelector('.add-to-order').addEventListener('click', () => {
   addItemToCart('Coffee');
@@ -41,12 +48,30 @@ document.querySelector('.add-to-order').addEventListener('click', () => {
   }
 );
 
-// jQuery for reference
-// $('.add-to-order').on('click', () => {
-//   addItemToCart('Coffee');
-//   incrementCartTotal(1.50);
+
+
+// Place Order
+// jQuery: coffeeSold = $('#cart-items').children().length
+// JS: coffeeSold = document.getElementById('cart-items').children.length
+
+// $('#place-order').on('click', () => {
+//   incrementCoffeeSold($('#cart-items').children().length);
+//   resetCart();
 //   }
 // );
+
+document.querySelector('#place-order').addEventListener('click', () => {
+  incrementCoffeeSold(document.getElementById('cart-items').children.length);
+  resetCart();
+  }
+);
+
+
+
+
+
+
+
 
 
 
